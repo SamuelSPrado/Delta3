@@ -65,7 +65,7 @@ header h1 {
   display: block;
   margin-bottom: 5px;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 .input-group input {
@@ -354,4 +354,29 @@ header h1 {
 .highlight {
   background-color: rgba(231, 76, 60, 0.1);
   border-left: 4px solid var(--accent-color);
+}
+
+body {
+  background-color: var(--background-color);
+  background-image: url('https://wallpapercave.com/wp/wp2763910.gif'); /* Adicione aqui o link do seu GIF */
+  background-repeat: no-repeat;
+  background-size: cover; /* Faz a imagem preencher toda a área, mesmo que corte um pouco */
+  background-position: center center;/* Centraliza horizontal e verticalmente */
+  background-attachment: fixed;      /* Mantém o fundo fixo ao rolar a página */
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  background: rgba(0, 20, 40, 0.20); /* Fundo branco com opacidade */
+  border-radius: 15px; /* Borda arredondada para suavizar */
+  padding: 20px;
+}
+
+.input-section {
+  background: rgba(0, 20, 40, 0.55); /* Fundo branco com opacidade */
+}
+
+.analysis-card {
+  background: rgba(255, 255, 255, 0.35); /* Fundo branco com opacidade */
 }
