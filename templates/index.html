@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANÁLISE DELTA3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ANÁLISE DELTA3</h1>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="localId">Local ID:</label>
+                <input type="text" id="localId" placeholder="Informe o LOCAL_ID">
+            </div>
+            <div class="input-group">
+                <label for="caixaId">Caixa ID:</label>
+                <input type="text" id="caixaId" placeholder="Informe o CAIXA_ID">
+            </div>
+            <button id="btnPesquisarCaixa" class="btn primary">
+                <i class="fas fa-search"></i> Pesquisar Caixa
+            </button>
+        </div>
+
+        <div class="analysis-section">
+            <!-- Invoice Order Section -->
+            <div class="analysis-card">
+                <div class="card-header">
+                    <h2>Invoice Order</h2>
+                    <button id="btnAnalisarInvoice" class="btn secondary">
+                        <i class="fas fa-chart-line"></i> Analisar Invoice
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="label">Débito:</span>
+                            <span id="invoiceDebito" class="value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Crédito:</span>
+                            <span id="invoiceCredito" class="value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Dinheiro:</span>
+                            <span id="invoiceDinheiro" class="value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Outros:</span>
+                            <span id="invoiceOutros" class="value">-</span>
+                        </div>
+                        <div class="result-item total">
+                            <span class="label">Total:</span>
+                            <span id="invoiceTotal" class="value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pedido Pos Section -->
+            <div class="analysis-card">
+                <div class="card-header">
+                    <h2>Pedido Pos</h2>
+                    <button id="btnAnalisarPedido" class="btn secondary">
+                        <i class="fas fa-chart-bar"></i> Analisar Pedido
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="label">Débito:</span>
+                            <span id="pedidoDebito" class="value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Crédito:</span>
+                            <span id="pedidoCredito" class="value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Dinheiro:</span>
+                            <span id="pedidoDinheiro" class="value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Outros:</span>
+                            <span id="pedidoOutros" class="value">-</span>
+                        </div>
+                        <div class="result-item total">
+                            <span class="label">Total:</span>
+                            <span id="pedidoTotal" class="value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simple Sale API Section -->
+            <div class="analysis-card">
+                <div class="card-header">
+                    <h2>Simple Sale API</h2>
+                    <button id="btnAnalisarAPI" class="btn secondary">
+                        <i class="fas fa-cloud"></i> Analisar API
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="label">Débito:</span>
+                            <span id="apiDebito" class="value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Crédito:</span>
+                            <span id="apiCredito" class="value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Dinheiro:</span>
+                            <span id="apiDinheiro" class="value">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Outros:</span>
+                            <span id="apiOutros" class="value">-</span>
+                        </div>
+                        <div class="result-item total">
+                            <span class="label">Total:</span>
+                            <span id="apiTotal" class="value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i id="toastIcon" class="fas fa-info-circle"></i>
+            <div class="message">
+                <span id="toastTitle" class="text text-1">Notificação</span>
+                <span id="toastMessage" class="text text-2">Mensagem de notificação</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+        <div class="progress"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
